@@ -18,13 +18,11 @@ This project is designed to match commodity descriptions to Harmonized System (H
 The goal of this project is to provide a method for matching commodity descriptions to HS codes. It achieves this using the following steps:
 
 1. Preprocessing commodity descriptions, including:
-   - Removing special characters and digits.
-   - Removing stop words.
-2. Keyword extraction for each chapter based on TF-IDF scores.
-3. Finding the best chapter match based on Jaccard similarity with input keywords.
-4. Encoding the input and descriptions using BERT embeddings.
-5. Calculating cosine similarity between the input and descriptions.
-6. Returning the top 5 HS codes with the highest similarity scores.
+   -Seperating the description into common part and unique part.
+2. Encoding the input and descriptions using sentence Transformers.
+3. Using another brands dataset.
+4. Calculating cosine similarity between the input embeddings and descriptions embeddings.
+6. Returning the top HS codes with the highest similarity scores.
 
 ## Prerequisites
 
@@ -32,13 +30,9 @@ Before running the code, ensure you have the following libraries and resources i
 
 - Python 3.x
 - Pandas
-- NLTK
 - Scikit-learn
 - TensorFlow
-- TensorFlow Hub
-- TensorFlow Text
-- spaCy
-- Pretrained BERT model (downloaded and linked in the code)
+- Sentence Transformers
 
 You can install most of these dependencies using `pip` or `conda`.
 
